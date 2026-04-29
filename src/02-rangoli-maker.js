@@ -47,20 +47,62 @@
  */
 export function repeatPattern(pattern, times) {
   // Your code here
+  let patternResult;
+  if(!Number.isInteger(times)){
+    return ""
+  }
+  if(typeof pattern !== "string" || times <= 0){
+    return "";
+  }
+  
+  patternResult = pattern.repeat(times);
+  return patternResult;
 }
 
 export function extractRangoliCenter(design, start, end) {
   // Your code here
+  let slicedValue;
+  if(typeof design !== "string" || typeof start !== "number" ||typeof end !== "number"){
+    return "";
+  }
+  slicedValue = design.slice(start,end);
+  return slicedValue;
 }
 
 export function splitAndJoinRangoli(colorString, oldSep, newSep) {
   // Your code here
+  let splitedValue;
+  let joinedValue;
+  if(typeof colorString !== "string"){
+    return "";
+  }
+  splitedValue = colorString.split(oldSep);
+  joinedValue = splitedValue.join(newSep);
+  return joinedValue;
 }
 
 export function replaceRangoliColor(design, oldColor, newColor) {
   // Your code here
+  let replacedColors;
+  if(typeof design !== "string" || typeof oldColor !== "string" || typeof newColor !== "string"){
+    return "";
+  }
+  replacedColors = design.replaceAll(oldColor,newColor)
+  return replacedColors;
 }
 
 export function makeRangoliBorder(char, length) {
   // Your code here
+  let times = 100;
+  let repeatedChar;
+  let slicedValue;
+  if(!Number.isInteger(length)){
+    return "";
+  }
+  if(typeof char !== "string" || length <= 0 ){
+    return "";
+  }
+  repeatedChar = char.repeat(times);
+  slicedValue = repeatedChar.slice(0,length);
+  return slicedValue;
 }
